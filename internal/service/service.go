@@ -1,6 +1,7 @@
 package service
+
 import (
-	"string"
+	"strings"
 )
 
 var MorseMap = map[rune]string{
@@ -8,7 +9,7 @@ var MorseMap = map[rune]string{
 	'F': "..-.", 'G': "--.", 'H': "....", 'I': "..", 'J': ".---",
 	'K': "-.-", 'L': ".-..", 'M': "--", 'N': "-.", 'O': "---",
 	'P': ".--.", 'Q': "--.-", 'R': ".-.", 'S': "...", 'T': "-",
-	'U': "..-", 'V': "...-", 'W': ".--", 'X': "-..-", 'Y':"-.--",
+	'U': "..-", 'V': "...-", 'W': ".--", 'X': "-..-", 'Y': "-.--",
 	'Z': "--..",
 	'0': "-----", '1': ".----", '2': "..---", '3': "...--", '4': "....-",
 	'5': ".....", '6': "-....", '7': "--...", '8': "---..", '9': "----.",
@@ -26,8 +27,8 @@ var CharMap = map[string]string{
 	"----.": "9", "/": " ",
 }
 
-func ToMorse(str string)string {
-	
+func ToMorse(str string) string {
+
 	Text := strings.ToUpper(str)
 	var result []string
 
@@ -59,22 +60,23 @@ func ToChar(morse string) string {
 }
 
 func Detect(s string) string {
-trimmed := strings.TrimSpace(s)
+	trimmed := strings.TrimSpace(s)
 	if trimmed == "" {
 		return "unknown"
 	}
 
 	isMorse := true
-//	hasValidMorseChar := false
+	//	hasValidMorseChar := false
 
 	for _, r := range trimmed {
-switch r {
+		switch r {
 		case '.', '-', ' ', '/':
-continue
-default:
+			continue
+		default:
 			isMorse = false
-}}
-if isMorse {
+		}
+	}
+	if isMorse {
 		return ToChar(s)
 	}
 	return ToMorse(s)
