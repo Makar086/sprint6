@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"server"
+	"https://github.com/Makar086/sprint6.git/internal/server"
 	
 )
 
