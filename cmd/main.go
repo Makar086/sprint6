@@ -15,7 +15,7 @@ func main() {
 	logger.Println("Инициализация сервера...")
 
 	
-	srv := server.New() 
+	srv := server.NewServer() 
 
 	logger.Println("Запуск сервера на порту :8080...")
 
