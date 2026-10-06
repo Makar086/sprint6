@@ -7,7 +7,7 @@ import (
 	"os"
 "path/filepath"
 	"time"
-"service"
+"github.com/Yandex-Practicum/go1fl-sprint6-final/service"
 )
 
 func mainHandle(w http.ResponseWriter, r *http.Request) {

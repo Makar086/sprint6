@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/Makar086/sprint6.git/internal/server"
+	"github.com/Yandex-Practicum/go1fl-sprint6-final/internal/server"
 	
 )
 
