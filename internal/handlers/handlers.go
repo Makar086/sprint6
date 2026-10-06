@@ -1,4 +1,4 @@
-package handlers
+п»їpackage handlers
 
 import (
     "fmt"
@@ -22,13 +22,13 @@ defer file.Close()
 
 fileBytes, err := io.ReadAll(file)
 	if err != nil {
-		http.Error(w, "Ошибка чтения данных файла: "+err.Error(), http.StatusInternalServerError)
+		http.Error(w, "РћС€РёР±РєР° С‡С‚РµРЅРёСЏ РґР°РЅРЅС‹С… С„Р°Р№Р»Р°: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 
 convertedString := service.Detect(string(fileBytes))
 	if err != nil {
-		http.Error(w, "Ошибка конвертации: "+err.Error(), http.StatusInternalServerError)
+		http.Error(w, "РћС€РёР±РєР° РєРѕРЅРІРµСЂС‚Р°С†РёРё: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 
@@ -39,14 +39,14 @@ ext := filepath.Ext(header.Filename)
 
 dst, err := os.Create(localFileName)
 	if err != nil {
-		http.Error(w, "Не удалось создать локальный файл", http.StatusInternalServerError)
+		http.Error(w, "РќРµ СѓРґР°Р»РѕСЃСЊ СЃРѕР·РґР°С‚СЊ Р»РѕРєР°Р»СЊРЅС‹Р№ С„Р°Р№Р»", http.StatusInternalServerError)
 		return
 	}
 	defer dst.Close()
 
 _, err = dst.WriteString(convertedString)
 	if err != nil {
-		http.Error(w, "Ошибка записи в файл", http.StatusInternalServerError)
+		http.Error(w, "РћС€РёР±РєР° Р·Р°РїРёСЃРё РІ С„Р°Р№Р»", http.StatusInternalServerError)
 		return
 	}
 w.Header().Set("Content-Type", "text/plain; charset=utf-8")

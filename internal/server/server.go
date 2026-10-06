@@ -1,4 +1,4 @@
-package server
+п»їpackage server
 
 import (
 	"log"
@@ -36,7 +36,7 @@ func NewServer(logger *log.Logger) *Server {
 
 func registerHandlers(mux *http.ServeMux, logger *log.Logger) {
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		logger.Println("Получен новый запрос")
+		logger.Println("РџРѕР»СѓС‡РµРЅ РЅРѕРІС‹Р№ Р·Р°РїСЂРѕСЃ")
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("Server is running"))
 	})
@@ -45,6 +45,6 @@ func registerHandlers(mux *http.ServeMux, logger *log.Logger) {
 }
 
 func (s *Server) Start() error {
-	s.logger.Printf("Сервер запускается на порту %s...", s.server.Addr)
+	s.logger.Printf("РЎРµСЂРІРµСЂ Р·Р°РїСѓСЃРєР°РµС‚СЃСЏ РЅР° РїРѕСЂС‚Сѓ %s...", s.server.Addr)
 	return s.server.ListenAndServe()
 }
