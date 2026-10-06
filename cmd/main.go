@@ -20,7 +20,7 @@ func main() {
 	logger.Println("Запуск сервера на порту :8080...")
 
 	
-	if err := srv.Start(":8080"); err != nil {
+	if err := srv.Start(); err != nil {
 		
 		logger.Fatalf("Критическая ошибка при запуске сервера: %v", err)
 	}
