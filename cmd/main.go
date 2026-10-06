@@ -1,4 +1,4 @@
-package main
+п»їpackage main
 
 import (
 	"log"
@@ -12,17 +12,17 @@ func main() {
 	
 	logger := log.New(os.Stdout, "SERVER: ", log.LstdFlags|log.Lshortfile)
 
-	logger.Println("Инициализация сервера...")
+	logger.Println("РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃРµСЂРІРµСЂР°...")
 
 	
 	srv := server.New() 
 
-	logger.Println("Запуск сервера на порту :8080...")
+	logger.Println("Р—Р°РїСѓСЃРє СЃРµСЂРІРµСЂР° РЅР° РїРѕСЂС‚Сѓ :8080...")
 
 	
 	if err := srv.Start(":8080"); err != nil {
 		
-		logger.Fatalf("Критическая ошибка при запуске сервера: %v", err)
+		logger.Fatalf("РљСЂРёС‚РёС‡РµСЃРєР°СЏ РѕС€РёР±РєР° РїСЂРё Р·Р°РїСѓСЃРєРµ СЃРµСЂРІРµСЂР°: %v", err)
 	}
 }
 }
