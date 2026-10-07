@@ -10,11 +10,11 @@ import (
 "github.com/Yandex-Practicum/go1fl-sprint6-final/service"
 )
 
-func mainHandle(w http.ResponseWriter, r *http.Request) {
+func MainHandle(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w, r, "index.html")
 }
 
-func upload(w http.ResponseWriter, r *http.Request) {
+func Upload(w http.ResponseWriter, r *http.Request) {
    file, header, err := r.FormFile("myFile")
 defer file.Close()
 

@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 	"time"
+"github.com/Yandex-Practicum/go1fl-sprint6-final/handlers"
 )
 
 
@@ -16,7 +17,8 @@ type Server struct {
 func NewServer(logger *log.Logger) *Server {
 	mux := http.NewServeMux()
 
-	registerHandlers(mux, logger)
+	mux.HandleFunc("/", handlers.MainHandle)
+	mux.HandleFunc("/upload", handlers.Uploud)
 
 	httpServer := &http.Server{
 		Addr:         ":8080",
