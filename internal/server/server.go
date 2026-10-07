@@ -18,7 +18,7 @@ func NewServer(logger *log.Logger) *Server {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/", handlers.MainHandle)
-	mux.HandleFunc("/upload", handlers.Uploud)
+	mux.HandleFunc("/upload", handlers.Upload)
 
 	httpServer := &http.Server{
 		Addr:         ":8080",

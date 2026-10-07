@@ -11,7 +11,7 @@ import (
 )
 
 func MainHandle(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "index.html")
+    http.ServeFile(w, r, "github.com/Yandex-Practicum/go1fl-sprint6-final/index.html")
 }
 
 func Upload(w http.ResponseWriter, r *http.Request) {
