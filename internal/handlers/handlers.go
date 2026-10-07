@@ -11,7 +11,7 @@ import (
 )
 
 func MainHandle(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "github.com/Yandex-Practicum/go1fl-sprint6-final/index.html")
+    http.ServeFile(w, r, "../index.html")
 }
 
 func Upload(w http.ResponseWriter, r *http.Request) {
@@ -55,11 +55,4 @@ w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 
 }
 
-//func main() {
-//    http.HandleFunc("/", mainHandle)
-//    http.HandleFunc("/upload", upload)
-//    err := http.ListenAndServe(":8080", nil)
-//    if err != nil {
-//        panic(err)
-//    }
-//} 
+
