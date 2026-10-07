@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 	"time"
-"github.com/Yandex-Practicum/go1fl-sprint6-final/handlers"
+"github.com/Yandex-Practicum/go1fl-sprint6-final/internal/handlers"
 )
 
 
